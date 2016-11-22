@@ -1,0 +1,54 @@
+{
+  "1": {
+    "name": "Cleanse",
+    "cooldown": "210"
+  },
+  "3": {
+    "name": "Exhaust",
+    "cooldown": "210"
+  },
+  "4": {
+    "name": "Flash",
+    "cooldown": "300"
+  },
+  "6": {
+    "name": "Ghost",
+    "cooldown": "180"
+  },
+  "7": {
+    "name": "Heal",
+    "cooldown": "240"
+  },
+  "11": {
+    "name": "Smite",
+    "cooldown": "75"
+  },
+  "12": {
+    "name": "Teleport",
+    "cooldown": "300"
+  },
+  "13": {
+    "name": "Clarity",
+    "cooldown": "240"
+  },
+  "14": {
+    "name": "Ignite",
+    "cooldown": "210"
+  },
+  "21": {
+    "name": "Barrier",
+    "cooldown": "180"
+  },
+  "30": {
+    "name": "To the King!",
+    "cooldown": "10"
+  },
+  "31": {
+    "name": "Poro Toss",
+    "cooldown": "20"
+  },
+  "32": {
+    "name": "Mark",
+    "cooldown": "80"
+  }
+}

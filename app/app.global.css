@@ -1,39 +1,48 @@
 @import "~font-awesome/css/font-awesome.css";
 
 body {
-  position: relative;
-  color: white;
-  height: 100vh;
-  background-color: #232C39;
-  background-image: linear-gradient(45deg, rgba(0, 216, 255, .5) 10%, rgba(0, 1, 127, .7));
-  font-family: Arial, Helvetica, Helvetica Neue, serif;
-  overflow-y: hidden;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: sans-serif;
+  overflow: hidden;
 }
-
-h2 {
-  margin: 0;
-  font-size: 2.25rem;
-  font-weight: bold;
-  letter-spacing: -.025em;
-  color: #fff;
+.launch-button {
+  background-color: #adc708;
+  border-radius: 10px;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  height: 30px;
+  width: 160px;
 }
-
-p {
-  font-size: 24px;
+.launch-button:active {
+  background-color: rgba(173, 179, 8, 0.88);
 }
-
-li {
-  list-style: none;
+.champions-container {
+  height: 300px;
 }
-
-a {
-  color: white;
-  opacity: .75;
-  text-decoration: none;
+.champion {
+  display: block;
+  padding: 2px;
+  width: auto;
+  height: 20%;
+  box-sizing: border-box;
 }
-
-a:hover {
-  opacity: 1;
-  text-decoration: none;
-  cursor: pointer;
+.champion>img {
+  display: inline-block;
+  height: 100%;
+  width: auto;
+}
+.spells-container {
+  display: inline-block;
+  width: 26px;
+  height: 100%;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.spells-container>img {
+  display: inline-block;
+  width: auto;
+  height: 50%;
+  padding: 0;
 }

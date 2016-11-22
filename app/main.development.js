@@ -44,11 +44,12 @@ app.on('ready', async() => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 300,
-    height: 150,
+    width: 250,
+    height: 310,
     frame: false,
     transparent: true,
     alwaysOnTop: true,
+    useContentSize: true,
     x: 0,
     y: 0
   });
