@@ -13,12 +13,10 @@ body {
   display: flex;
   flex-flow: column;
   height: 100vh;
-  /*justify-content: space-between;*/
 }
 .champion {
   display: flex;
   box-sizing: border-box;
-  /*border-bottom: 1px solid green;*/
 }
 .champion-image {
   flex: 0 0 60px;
@@ -58,29 +56,25 @@ body {
   position: relative;
 }
 .inline-wrapper {
-  display: block;
+  display: flex;
   padding-left: 10px;
   margin: 0px;
   height: 28px;
   width: 100px;
+  justify-content: center;
 }
 .counts {
-  display: inline-block;
+  flex: 1 0 28px;
   padding: 0;
   margin: 0px;
-  width: 28px;
   line-height: 28px;
   height: auto;
-  width: 40px;
   font-size: 24px;
-  /*Experimental*/
-  position: relative;
-  top: -5px;
+  text-align: center;
 }
 .timer .less {
-  display: inline-block;
+  flex: 0 0 20px;
   font-size: 36px;
-  width: 20px;
   text-align: center;
   position: relative;
   top: -5px;

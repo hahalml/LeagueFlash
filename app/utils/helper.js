@@ -23,7 +23,3 @@ export function getChampion(participant) {
   const championId = participant.championId;
   return championList[championId];
 }
-
-// export function getChampionThumbnail() {
-//
-// }

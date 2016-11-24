@@ -22,7 +22,7 @@ class Timer extends Component {
     interval = this.startTimer();
   }
   componentWillUnmount() {
-    window.clearInterval();
+    window.clearInterval(interval);
   }
   startTimer() {
     return window.setInterval(() => {
@@ -44,8 +44,11 @@ class Timer extends Component {
     const seconds = this.state.elapsed % 60;
     return (
       <div className="inline-wrapper">
-        <div className="counts">{minutes}m</div>
-        <div className="counts">{seconds}s</div>
+        <div
+          className="counts minutes"
+          style={(minutes === 0) ? { display: 'none' } : null}
+        >{minutes}m</div>
+        <div className="counts seconds">{seconds}s</div>
         <div onClick={this.handleLower} className="less">-</div>
       </div>
     );

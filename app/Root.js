@@ -25,10 +25,10 @@ class Root extends Component {
         this.updateTheState(data);
         return data;
       }).catch((err) => {
-        console.error(err);
-        this.setState({
-          error: err
-        });
+        console.log(err);
+        // this.setState({
+        //   error: err
+        // });
       });
   }
   updateTheState(data) {
