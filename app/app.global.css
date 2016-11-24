@@ -4,50 +4,85 @@ body {
   background-color: rgba(0, 0, 0, 0);
   font-family: sans-serif;
   overflow: hidden;
-}
-.launch-button {
-  background-color: #adc708;
-  border-radius: 10px;
-  line-height: 24px;
-  font-size: 18px;
-  font-weight: normal;
-  text-align: center;
-  height: 30px;
-  width: 160px;
-}
-.launch-button:active {
-  background-color: rgba(173, 179, 8, 0.88);
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 0px;
+  margin-right: 0px;
 }
 .champions-container {
-  height: 300px;
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  /*justify-content: space-between;*/
 }
 .champion {
-  display: block;
-  padding: 2px;
-  width: auto;
-  height: 20%;
+  display: flex;
   box-sizing: border-box;
+  /*border-bottom: 1px solid green;*/
 }
-.champion>img {
-  display: inline-block;
-  height: 100%;
-  width: auto;
+.champion-image {
+  flex: 0 0 60px;
+}
+.champion-image > img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 1px
 }
 .spells-container {
-  display: inline-block;
-  width: 26px;
+  flex: 0 0 30px;
   height: 100%;
-  padding: 2px;
-  box-sizing: border-box;
+  /*margin-left: 2px;*/
 }
-.spells-container>img {
-  display: inline-block;
-  width: auto;
-  height: 50%;
-  padding: 0;
+.spells-container > img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  /*padding: 2px;*/
+  border: 1px solid black;
 }
 .timer-container {
+  display: block;
+}
+.timer {
+  width: 110px;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 7px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+.timer2 {
+  position: relative;
+}
+.inline-wrapper {
+  display: block;
+  padding-left: 10px;
+  margin: 0px;
+  height: 28px;
+  width: 100px;
+}
+.counts {
   display: inline-block;
-  width: auto;
-  height: 100%;
+  padding: 0;
+  margin: 0px;
+  width: 28px;
+  line-height: 28px;
+  height: auto;
+  width: 40px;
+  font-size: 24px;
+  /*Experimental*/
+  position: relative;
+  top: -5px;
+}
+.timer .less {
+  display: inline-block;
+  font-size: 36px;
+  width: 20px;
+  text-align: center;
+  position: relative;
+  top: -5px;
+  cursor: pointer;
 }

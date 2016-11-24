@@ -1,54 +1,80 @@
 {
   "1": {
     "name": "Cleanse",
-    "cooldown": "210"
+    "cooldown": "210",
+    "color": "#004152",
+    "txtColor": "black"
   },
   "3": {
     "name": "Exhaust",
-    "cooldown": "210"
+    "cooldown": "210",
+    "color": "#7B5900",
+    "txtColor": "black"
   },
   "4": {
     "name": "Flash",
-    "cooldown": "300"
+    "cooldown": "300",
+    "color": "#F6E821",
+    "txtColor": "black"
   },
   "6": {
     "name": "Ghost",
-    "cooldown": "180"
+    "cooldown": "180",
+    "color": "#13A0D7",
+    "txtColor": "black"
   },
   "7": {
     "name": "Heal",
-    "cooldown": "240"
+    "cooldown": "240",
+    "color": "#52AB37",
+    "txtColor": "black"
   },
   "11": {
     "name": "Smite",
-    "cooldown": "75"
+    "cooldown": "75",
+    "color": "#945108",
+    "txtColor": "white"
   },
   "12": {
     "name": "Teleport",
-    "cooldown": "300"
+    "cooldown": "300",
+    "color": "#8C00B5",
+    "txtColor": "white"
   },
   "13": {
     "name": "Clarity",
-    "cooldown": "240"
+    "cooldown": "240",
+    "color": "#4E65C6",
+    "txtColor": "white"
   },
   "14": {
     "name": "Ignite",
-    "cooldown": "210"
+    "cooldown": "210",
+    "color": "#BC1509",
+    "txtColor": "white"
   },
   "21": {
     "name": "Barrier",
-    "cooldown": "180"
+    "cooldown": "180",
+    "color": "#D9BD39",
+    "txtColor": "black"
   },
   "30": {
     "name": "To the King!",
-    "cooldown": "10"
+    "cooldown": "10",
+    "color": "grey",
+    "txtColor": "black"
   },
   "31": {
     "name": "Poro Toss",
-    "cooldown": "20"
+    "cooldown": "20",
+    "color": "grey",
+    "txtColor": "black"
   },
   "32": {
     "name": "Mark",
-    "cooldown": "80"
+    "cooldown": "80",
+    "color": "grey",
+    "txtColor": "black"
   }
 }

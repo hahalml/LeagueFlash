@@ -4,9 +4,6 @@ import Champion from './components/Champion';
 import mockGame from './utils/mockGamePaolo.json'; // TODO Mock data, to delete later
 
 class App extends Component {
-  constructor() {
-    super();
-  }
   componentWillMount() {
     // const data = this.props.data;
     // TODO replace mock data with actual data
@@ -44,8 +41,7 @@ class App extends Component {
           return (
             <Champion
               key={player.username}
-              champion={player.champion}
-              spells={player.spells}
+              playerInfo={player}
             />
           );
         })}
