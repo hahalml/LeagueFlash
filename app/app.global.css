@@ -46,3 +46,8 @@ body {
   height: 50%;
   padding: 0;
 }
+.timer-container {
+  display: inline-block;
+  width: auto;
+  height: 100%;
+}

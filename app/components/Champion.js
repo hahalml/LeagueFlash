@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ChampionIcon extends Component {
+class Champion extends Component {
   render() {
     return (
       <div className="champion">
@@ -18,9 +18,13 @@ class ChampionIcon extends Component {
             alt={this.props.spells[1].name}
           />
         </div>
+        <div className="timer-container">
+
+        </div>
+        <br />
       </div>
     );
   }
 }
 
-export default ChampionIcon;
+export default Champion;

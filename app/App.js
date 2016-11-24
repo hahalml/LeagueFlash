@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { calculateInsight, getChampion, getMasteries } from './utils/helper';
-import ChampionIcon from './components/ChampionIcon';
+import Champion from './components/Champion';
 import mockGame from './utils/mockGamePaolo.json'; // TODO Mock data, to delete later
 
 class App extends Component {
@@ -42,7 +42,7 @@ class App extends Component {
       <div className="champions-container">
         {players.map(player => {
           return (
-            <ChampionIcon
+            <Champion
               key={player.username}
               champion={player.champion}
               spells={player.spells}
