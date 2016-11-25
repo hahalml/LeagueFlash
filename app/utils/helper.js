@@ -1,6 +1,12 @@
-import { playerID, APIKey } from '../settings.js';
+import { app } from 'electron';
 import championList from './championKeyId.json';
 import spellList from './spellKeyId.json';
+
+const fs = require('fs');
+
+const path = process.env.APPDATA + '/LeagueFlash/settings.json';
+const settings = JSON.parse(fs.readFileSync(path, 'utf-8'));
+export const { APIKey, playerID } = settings;
 
 export function calculateInsight(participant) {
   for (var mastery of participant.masteries) {

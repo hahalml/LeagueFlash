@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
 import { calculateInsight, getChampion, getMasteries } from './utils/helper';
 import Champion from './components/Champion';
-import { playerID } from './settings';
-// import mockGame from './utils/mockGamePaolo.json'; // Mock data used for testing
 
 class App extends Component {
   componentWillMount() {
     const data = this.props.data;
-    console.log(data);
     // This is mock Data I used for testing
     // const data = mockGame;
     const participantsRaw = data.participants; // Array of participants to the game
     // Initialize an empty array that will hold all the participants objects only with
     // the proprieties that interest us
-    debugger;
     const participants = [];
-    const myIndex = participantsRaw.findIndex((participant) => participant.summonerId === playerID);
+    const myIndex = participantsRaw.findIndex((participant) => participant.summonerId === this.props.playerId);
     // Loop over every partecipant object from the Game to select the info we need
     for (var i in participantsRaw) {
       // We only want to save the champions on the enemy team

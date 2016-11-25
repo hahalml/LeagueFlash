@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { APIKey, playerID } from './utils/helper';
 import './app.global.css';
 import App from './App';
-import { playerID, APIKey } from './settings';
 
 class Root extends Component {
   constructor() {
@@ -32,7 +32,6 @@ class Root extends Component {
       });
   }
   updateTheState(data) {
-    console.log('UpdateTheState fired!');
     this.setState({ data });
   }
   // Route the user towards the App Page (Wich will display a spinning loader until
@@ -70,7 +69,7 @@ class Root extends Component {
     }
     if (this.state.data) {
       // If the data returned from the API then load the App component
-      return <App data={this.state.data} reset={this.reset} />;
+      return <App playerId={playerID} data={this.state.data} reset={this.reset} />;
     }
     // If there is still no data render the spinning loader
     // TODO Add the spinning loader
