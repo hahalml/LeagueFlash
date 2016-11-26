@@ -11,28 +11,26 @@ class Root extends Component {
     this.fetchGame = this.fetchGame.bind(this);
     this.renderApp = this.renderApp.bind(this);
     this.reset = this.reset.bind(this);
-    this.updateTheState = this.updateTheState.bind(this);
   }
   // Function to retrieve the data for the game from the Riot API
   fetchGame() {
-    return fetch('https://euw.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/EUW1/'
-      + playerID + '?api_key=' + APIKey).then(response => {
-        if (!response.ok) {
-          throw Error(response.statusText);
-        }
-        return response.json();
-      }).then((data) => {
-        this.updateTheState(data);
-        return data;
-      }).catch((err) => {
-        console.log(err);
-        // this.setState({
-        //   error: err
-        // });
+    const rawData = fetch('https://euw.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/EUW1/'
+      + playerID + '?api_key=' + APIKey)
+    const data = rawData.then(response => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response.json();
+    });
+    data.then((data) => {
+        this.setState({ data });
       });
-  }
-  updateTheState(data) {
-    this.setState({ data });
+    data.catch((err) => {
+      console.log(err);
+      this.setState({
+        error: err
+      });
+    });
   }
   // Route the user towards the App Page (Wich will display a spinning loader until
   // the fetch is completed)
@@ -49,11 +47,9 @@ class Root extends Component {
   // render the starting screen (One button)
   renderHome() {
     return (
-      <div>
         <button className="launch-button" onClick={this.start}>
           START FLASH
         </button>
-      </div>
     );
   }
   // What is displayed when you click the green Start button
@@ -61,9 +57,9 @@ class Root extends Component {
     // TODO: Adjust the window size
     if (this.state.error) {
       return (
-        <div>
-          <p>Error! {this.state.error.message}</p>
-          <button onClick={this.reset}>RESET</button>
+        <div className="error-div">
+          <p className="error-text">Error! <br />{this.state.error.message}</p>
+          <button className="launch-button" onClick={this.reset}>RESET</button>
         </div>
       );
     }
@@ -73,7 +69,7 @@ class Root extends Component {
     }
     // If there is still no data render the spinning loader
     // TODO Add the spinning loader
-    return <p>Loading</p>;
+    return <div className="loading-button" onClick={this.reset}>LOADING...</div>;
   }
   // The simplest React render method ever
   render() {

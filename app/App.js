@@ -11,7 +11,7 @@ class App extends Component {
     // Initialize an empty array that will hold all the participants objects only with
     // the proprieties that interest us
     const participants = [];
-    const myIndex = participantsRaw.findIndex((participant) => participant.summonerId === this.props.playerId);
+    const myIndex = participantsRaw.findIndex((participant) => participant.summonerId === parseInt(this.props.playerId, 10));
     // Loop over every partecipant object from the Game to select the info we need
     for (var i in participantsRaw) {
       // We only want to save the champions on the enemy team
