@@ -1,211 +1,95 @@
-# electron-react-boilerplate
+# League Flash
 
-[![Build Status][travis-image]][travis-url]
-[![Appveyor Build Status][appveyor-image]][appveyor-url]
-[![Dependency Status][david_img]][david_site]
-[![NPM version][npm-image]][npm-url]
-[![Join the chat at https://gitter.im/electron-react-boilerplate/Lobby](https://badges.gitter.im/electron-react-boilerplate/Lobby.svg)](https://gitter.im/electron-react-boilerplate/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+> A Simple League of Legends plugin to keep track of enemies' summoner spells
 
-![](./erb-logo.png)
-
-> Live editing development on desktop app
-
-[Electron](http://electron.atom.io/) application boilerplate based on [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux), [React Router](https://github.com/reactjs/react-router), [Webpack](http://webpack.github.io/docs/), [React Transform HMR](https://github.com/gaearon/react-transform-hmr) for rapid application development
+Just click on a champion's spell to start the timer (It also takes into account the Insight Mastery)
 
 ## Screenshot
 
-![Electron Boilerplate Demo](https://cloud.githubusercontent.com/assets/3382565/10557547/b1f07a4e-74e3-11e5-8d27-79ab6947d429.gif)
+![](./resources/Screenshot.png)
 
-## Install
+* **Note: This is not 100% functioning, be careful**
+* **While you are ingame your Windows TaskBar will be hidden until you close the application**
+* **If you click on the overlay the game will lag a litle bit until you press on the game itsef again**
+* **This application only works on Windows 7, 8 or 10 (64bits)**
 
-* **Note: requires a node version >= 6 and an npm version >= 3.**
-* **If you have installation or compilation issues with this project, please see [our debugging guide](https://github.com/chentsulin/electron-react-boilerplate/issues/400)**
+## Things to do before installing the application
 
-First, clone the repo via git:
-
-```bash
-git clone https://github.com/chentsulin/electron-react-boilerplate.git your-project-name
-```
-
-And then install dependencies.
-**ProTip**: Install with [yarn](https://github.com/yarnpkg/yarn) for faster and safer installation
+Open Windows Explorer or Cortana and type
 
 ```bash
-$ cd your-project-name && npm install
+%AppData%
+```
+![](./resources/AppData.png)
+
+Hit enter and create a new folder there called 'LeagueFlash'
+
+Then open NotePad or any other text editor and copy this into it
+
+```bash
+{
+    "playerID": "<Your-player-id",
+    "APIKey": "<Your-Api-Key>"
+}
 ```
 
-:bulb: *In order to remove boilerplate sample code, simply run `npm run cleanup`. After this is run, the initial sample boilerplate code will be removed in order for a clean project for starting custom dev*
+Save the file as 'settings.json' and in the folder that you just created
+Remember to save it as: Type 'All files'
+
+![](./resources/Save.png)
+
+## Getting the playerId and the APIKey from Riot
+
+Go to the official page of the [Riot API](www.developer.riotgames.com)
+
+Register to the site with your League of Legends account and you'll see a page like this:
+
+![](./resources/apiHomepage.png)
+
+Copy the API Key displayed and paste it into the settings.json file that you created replacing:
+
+```bash
+<Your-Api-Key>
+```
+
+Then go to API DOCUMETATION => FULL API REFERENCE 
+Click on 'summoner-v1.4' and click on the first item on the listed
+
+Scroll down until you see 'Path Parameters' and insert your summoner name in the input field
+
+After submitting scroll down until you see 'Response Body'
+
+Here copy the number associated with "id", Here's an example:
+
+```bash
+"id": 3389232,
+```
+
+Paste the id in the 'settings.json' document replacing <Your-player-id>
 
 ## Run
 
-Run these two commands __simultaneously__ in different console tabs.
+Now you can just download the App from []()
 
-```bash
-$ npm run hot-server
-$ npm run start-hot
-```
+Double click on the installer to install the application, it will create a shortcut on the Desktop by default
 
-or run two servers with one command
+## Disinstall
 
-```bash
-$ npm run dev
-```
+To disinstall the application you do the same process as any other program:
 
-## Editor Configuration
-**Atom**
-```bash
-apm install editorconfig es6-javascript autocomplete-flow javascript-snippets linter linter-eslint language-babel
-```
+Control Panel => Remove an application => LeagueFlash
+(Those istruction may very depending on the version of the operating system)
 
-**Sublime**
-* https://github.com/sindresorhus/editorconfig-sublime#readme
-* https://github.com/SublimeLinter/SublimeLinter3
-* https://github.com/roadhump/SublimeLinter-eslint
-* https://github.com/babel/babel-sublime
+You will also have to manually delete the LeagueFlash folder in %AppData%
 
-**Others**
-* [Editorconfig](http://editorconfig.org/#download)
-* [ESLint](http://eslint.org/docs/user-guide/integrations#editors)
-* Babel Syntax Plugin
+## Credits
 
-## DevTools
+The app was created by riccardopiola using [Electron](https://github.com/electron/electron) and [React](https://facebook.github.io/react/m)
 
-#### Toggle Chrome DevTools
+A special thanks goes to the team behind [electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate) for their awesome job in creatig their boilerplate
 
-- OS X: <kbd>Cmd</kbd> <kbd>Alt</kbd> <kbd>I</kbd> or <kbd>F12</kbd>
-- Linux: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>I</kbd> or <kbd>F12</kbd>
-- Windows: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>I</kbd> or <kbd>F12</kbd>
+Riot Games did not endorse this in any way. (They probabily wouldn't be happy about this project)
 
-*See [electron-debug](https://github.com/sindresorhus/electron-debug) for more information.*
+I do not take any responsability regarnding possibile issues. USE IT AT YOUR OWN RISK
 
-#### DevTools extension
-
-This boilerplate is included following DevTools extensions:
-
-* [Devtron](https://github.com/electron/devtron) - Install via [electron-debug](https://github.com/sindresorhus/electron-debug).
-* [React Developer Tools](https://github.com/facebook/react-devtools) - Install via [electron-devtools-installer](https://github.com/GPMDP/electron-devtools-installer).
-* [Redux DevTools](https://github.com/zalmoxisus/redux-devtools-extension) - Install via [electron-devtools-installer](https://github.com/GPMDP/electron-devtools-installer).
-
-You can find the tabs on Chrome DevTools.
-
-If you want to update extensions version, please set `UPGRADE_EXTENSIONS` env, just run:
-
-```bash
-$ UPGRADE_EXTENSIONS=1 npm run dev
-
-# For Windows
-$ set UPGRADE_EXTENSIONS=1 && npm run dev
-```
-
-
-
-## CSS Modules
-
-This boilerplate out of the box is configured to use [css-modules](https://github.com/css-modules/css-modules).
-
-All `.css` file extensions will use css-modules unless it has `.global.css`.
-
-If you need global styles, stylesheets with `.global.css` will not go through the
-css-modules loader. e.g. `app.global.css`
-
-If you want to import global css libraries (like `bootstrap`), you can just write the following code in `.global.css`:
-
-```css
-@import "~bootstrap/dist/css/bootstrap.css";
-```
-
-
-## Packaging
-
-To package apps for the local platform:
-
-```bash
-$ npm run package
-```
-
-To package apps for all platforms:
-
-First, refer to [Multi Platform Build](https://github.com/electron-userland/electron-builder/wiki/Multi-Platform-Build) for dependencies.
-
-Then,
-```bash
-$ npm run package-all
-```
-
-To package apps with options:
-
-```bash
-$ npm run package -- --[option]
-```
-
-## Further commands
-
-To run the application without packaging run
-
-```bash
-$ npm run build
-$ npm start
-```
-
-To run End-to-End Test
-
-```bash
-$ npm run build
-$ npm run test-e2e
-```
-
-#### Options
-
-See [electron-builder CLI Usage](https://github.com/electron-userland/electron-builder#cli-usage)
-
-#### Module Structure
-
-This boilerplate uses a [two package.json structure](https://github.com/electron-userland/electron-builder#two-packagejson-structure).
-
-1. If the module is native to a platform or otherwise should be included with the published package (i.e. bcrypt, openbci), it should be listed under `dependencies` in `./app/package.json`.
-2. If a module is `import`ed by another module, include it in `dependencies` in `./package.json`.   See [this ESLint rule](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md).
-3. Otherwise, modules used for building, testing and debugging should be included in `devDependencies` in `./package.json`.
-
-## Static Type Checking
-This project comes with Flow support out of the box! You can annotate your code with types, [get Flow errors as ESLint errors](https://github.com/amilajack/eslint-plugin-flowtype-errors), and get [type errors during runtime](https://github.com/gcanti/babel-plugin-tcomb-boilerplate) during development. Types are completely optional.
-
-## Native-like UI
-
-If you want to have native-like User Interface (OS X El Capitan and Windows 10), [react-desktop](https://github.com/gabrielbull/react-desktop) may perfect suit for you.
-
-## Dispatching redux actions from main process
-
-see discusses in [#118](https://github.com/chentsulin/electron-react-boilerplate/issues/118) and [#108](https://github.com/chentsulin/electron-react-boilerplate/issues/108)
-
-## How to keep the boilerplate updated
-
-If your application is a fork from this repo, you can add this repo to another git remote:
-
-```sh
-git remote add upstream https://github.com/chentsulin/electron-react-boilerplate.git
-```
-
-Then, use git to merge some latest commits:
-
-```sh
-git pull upstream master
-```
-
-## Maintainers
-
-- [C. T. Lin](https://github.com/chentsulin)
-- [Jhen-Jie Hong](https://github.com/jhen0409)
-- [Amila Welihinda](https://github.com/amilajack)
-
-
-## License
-MIT © [C. T. Lin](https://github.com/chentsulin)
-
-[npm-image]: https://img.shields.io/npm/v/electron-react-boilerplate.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/electron-react-boilerplate
-[travis-image]: https://travis-ci.org/chentsulin/electron-react-boilerplate.svg?branch=master
-[travis-url]: https://travis-ci.org/chentsulin/electron-react-boilerplate
-[appveyor-image]: https://ci.appveyor.com/api/projects/status/github/chentsulin/electron-react-boilerplate?svg=true
-[appveyor-url]: https://ci.appveyor.com/project/chentsulin/electron-react-boilerplate/branch/master
-[david_img]: https://img.shields.io/david/chentsulin/electron-react-boilerplate.svg
-[david_site]: https://david-dm.org/chentsulin/electron-react-boilerplate
+Just so you know: Since it is an application completely separated from League of Legends itself Riot has no way of actually determining whether you are using it or not.
