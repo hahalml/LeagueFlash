@@ -69,7 +69,7 @@ Paste the id in the 'settings.json' document replacing <Your-player-id>
 
 ## Run
 
-Now you can just download the App from []()
+Now you can just [download the App](https://github.com/riccardopiola/LeagueFlash/releases). Make sure to download the latest release, you only need the .exe file.
 
 Double click on the installer to install the application, it will create a shortcut on the Desktop by default
 
