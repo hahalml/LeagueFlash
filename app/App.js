@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { calculateInsight, getChampion, getMasteries } from './utils/helper';
+import { calculateInsight, getChampion, getMasteries, hideTaskBar, showTaskBar } from './utils/helper';
 import Champion from './components/Champion';
 
 class App extends Component {
@@ -31,20 +31,35 @@ class App extends Component {
     }
     // Push the array in State
     this.setState({ participants });
+    // Kill the taskbar
+    hideTaskBar();
+  }
+  compoenentWillUnmount() {
+    // Show the taskbar
+    showTaskBar();
+  }
+  reset() {
+    this.props.reset();
+    showTaskBar();
   }
 
   render() {
     const players = this.state.participants;
     return (
-      <div className="champions-container">
-        {players.map(player => {
-          return (
-            <Champion
-              key={player.username}
-              playerInfo={player}
-            />
-          );
-        })}
+      <div className="main-container">
+        <div className="toolbar">
+          <button onClick={this.reset.bind(this)}>EXIT</button>
+        </div>
+        <div className="champions-container">
+          {players.map(player => {
+            return (
+              <Champion
+                key={player.username}
+                playerInfo={player}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }

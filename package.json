@@ -1,7 +1,7 @@
 {
   "name": "League-Flash",
   "productName": "LeagueFlash",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Simple app for timing Summoner Spells in League of Legends",
   "main": "main.js",
   "scripts": {
@@ -49,8 +49,13 @@
       "main.js.map",
       "package.json"
     ],
+    "extraResources": [
+      "images/",
+      "extraResources/"
+    ],
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "resources/icon.ico"
     },
     "linux": {
       "target": [

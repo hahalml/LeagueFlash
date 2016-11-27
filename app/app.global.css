@@ -49,10 +49,17 @@ body {
  background-image: -o-linear-gradient(top, #FFC92B, #CE9A01);
  background-image: linear-gradient(to bottom, #FFC92B, #CE9A01);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFC92B, endColorstr=#CE9A01);
 }
+.main-container {
+  display: block;
+  width: auto;
+  height: 100vh;
+}
+.toolbar {
+  display: block;
+}
 .champions-container {
   display: flex;
   flex-flow: column;
-  height: 100vh;
 }
 .champion {
   display: flex;

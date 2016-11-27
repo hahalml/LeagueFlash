@@ -69,7 +69,11 @@ class Root extends Component {
     }
     // If there is still no data render the spinning loader
     // TODO Add the spinning loader
-    return <div className="loading-button" onClick={this.reset}>LOADING...</div>;
+    return (
+      <div className="error-div">
+        <p className="error-text">LOADING...</p>
+      </div>
+    );
   }
   // The simplest React render method ever
   render() {

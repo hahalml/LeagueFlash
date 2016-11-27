@@ -3,9 +3,12 @@ import championList from './championKeyId.json';
 import spellList from './spellKeyId.json';
 
 const fs = require('fs');
+const execFile = require('child_process').execFile;
+const path = require('path');
 
-const path = process.env.APPDATA + '/LeagueFlash/settings.json';
-const settings = JSON.parse(fs.readFileSync(path, 'utf-8'));
+const AppDataPath = process.env.APPDATA + '/LeagueFlash/settings.json';
+// const AppDataPath = 'C:\Users\Ricca\AppData\Roaming\LeagueFlash\settings.json';
+const settings = JSON.parse(fs.readFileSync(AppDataPath, 'utf-8'));
 export const { APIKey, playerID } = settings;
 
 export function calculateInsight(participant) {
@@ -28,4 +31,19 @@ export function getMasteries(participant) {
 export function getChampion(participant) {
   const championId = participant.championId;
   return championList[championId];
+}
+
+var cwd = '';
+if (process.env.NODE_ENV === 'development') {
+  cwd = path.join(process.cwd(), 'extraResources');
+} else {
+  cwd = path.join(process.cwd(), 'resources', 'extraResources');
+}
+
+export function hideTaskBar() {
+  execFile('TaskBarHider.exe', ['-hide'], { cwd });
+}
+
+export function showTaskBar() {
+  execFile('TaskBarHider.exe', ['-show'], { cwd });
 }

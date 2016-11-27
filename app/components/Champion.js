@@ -35,18 +35,18 @@ class Champion extends Component {
       <div className="champion">
         <div className="champion-image">
           <img
-            src={`./images/championImages/${this.state.player.champion}.png`}
+            src={`../images/${this.state.player.champion}.png`}
             alt={this.state.player.champion}
           />
         </div>
         <div className="spells-container">
           <img
-            src={`./images/summonerSpellsImages/${this.state.player.spells[0].name}.png`}
+            src={`../images/${this.state.player.spells[0].name}.png`}
             alt={this.state.player.spells[0].name}
             onClick={this.toggleSpell1.bind(this)}
           />
           <img
-            src={`./images/summonerSpellsImages/${this.state.player.spells[1].name}.png`}
+            src={`../images/${this.state.player.spells[1].name}.png`}
             alt={this.state.player.spells[1].name}
             onClick={this.toggleSpell2.bind(this)}
           />

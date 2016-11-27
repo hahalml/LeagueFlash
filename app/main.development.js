@@ -2,6 +2,7 @@ import {
   app, BrowserWindow, Menu, shell
 }
 from 'electron';
+// import { showTaskBar } from './utils/helper';
 
 let mainWindow = null;
 
@@ -45,7 +46,7 @@ app.on('ready', async() => {
   mainWindow = new BrowserWindow({
     show: false,
     width: 250,
-    height: 310,
+    height: 330,
     frame: false,
     transparent: true,
     alwaysOnTop: true,
